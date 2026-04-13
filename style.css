@@ -1,21 +1,25 @@
+/* BENDRAS STILIUS */
 body {
     margin: 0;
     font-family: Arial;
     background: #f5f6fa;
 }
 
+/* VIRŠUTINĖ ANTRAŠTĖ */
 header {
     background: #c38bbb;
     color: white;
     text-align: center;
     padding: 15px;
+    position: relative;
 }
 
+/* KONTEINERIS (sidebar + main) */
 .container {
     display: flex;
 }
 
-/* SIDEBAR */
+/* SIDEBAR MENIU */
 aside {
     width: 220px;
     background: #655263;
@@ -23,6 +27,7 @@ aside {
     min-height: 100vh;
 }
 
+/* SIDEBAR MYGTUKAI */
 aside button {
     width: 100%;
     margin-bottom: 10px;
@@ -32,32 +37,31 @@ aside button {
     color: white;
     cursor: pointer;
     border-radius: 8px;
-
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 16px;
 }
 
+/* HOVER EFEKTAS */
 aside button:hover {
     background: #f80ba1;
     transform: translateX(5px);
 }
 
-
-
+/* IKONOS MENIU */
 aside button img {
     width: 28px;
     height: 28px;
 }
 
-/* MAIN */
+/* PAGRINDINIS TURINYS */
 main {
     flex: 1;
     padding: 20px;
 }
 
-/* SECTIONS */
+/* SEKCIJOS BLOKAI */
 section {
     background: white;
     padding: 20px;
@@ -65,29 +69,32 @@ section {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+/* SLĖPIMAS */
 .hidden {
     display: none;
 }
 
-/* FORM */
+/* FORMOS */
 .form {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
 }
 
+/* INPUTAI IR SELECT */
 input, select {
     padding: 8px;
     border-radius: 6px;
     border: 1px solid #ccc;
 }
 
-/* LIST */
+/* SĄRAŠAI */
 ul {
     list-style: none;
     padding: 0;
 }
 
+/* LIST ITEM */
 li {
     background: #f1f2f6;
     margin-bottom: 5px;
@@ -97,18 +104,20 @@ li {
     justify-content: space-between;
 }
 
-/* TABLE */
+/* LENTELĖS */
 table {
     width: 100%;
     border-collapse: collapse;
 }
 
+/* LENTELĖS CELĖS */
 th, td {
     border: 1px solid #ccc;
     padding: 8px;
     text-align: center;
 }
 
+/* LENTELĖS HEADER */
 th {
     background: #ac99af;
     color: white;
@@ -129,45 +138,25 @@ th {
     }
 }
 
-/* DARK MODE */
+/* TAMSUS REŽIMAS */
 body.dark {
     background: #1e1e1e;
     color: white;
 }
 
-body.dark header {
-    background: #333;
-}
-
-body.dark aside {
-    background: #111;
-}
-
-body.dark section {
-    background: #2a2a2a;
-    color: white;
-}
-
+body.dark header { background: #333; }
+body.dark aside { background: #111; }
+body.dark section { background: #2a2a2a; color: white; }
 body.dark input,
 body.dark select {
     background: #444;
     color: white;
     border: 1px solid #666;
 }
+body.dark table th { background: #444; }
+body.dark li { background: #3a3a3a; }
 
-body.dark table th {
-    background: #444;
-}
-
-body.dark li {
-    background: #3a3a3a;
-}
-
-header {
-    position: relative;
-}
-
-/* dark mode mygtukas */
+/* DARK TOGGLE MYGTUKAS */
 .dark-toggle {
     position: absolute;
     right: 15px;
@@ -188,7 +177,10 @@ header {
     transform: scale(1.2);
 }
 
+/* VIDEO */
 iframe {
-    width: 100%;
-    min-height: 315px;
+    width: 45%;
+    height: 315px;
+    display: block;
+    margin: 20px auto;
 }
