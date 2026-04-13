@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f5f6fa;
+}
+
+header {
+    background: #c38bbb;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.container {
+    display: flex;
+}
+
+/* SIDEBAR */
+aside {
+    width: 220px;
+    background: #655263;
+    padding: 15px;
+    min-height: 100vh;
+}
+
+aside button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px;
+    border: none;
+    background: #b55fb8;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+aside button:hover {
+    background: #f80ba1;
+    transform: translateX(5px);
+}
+
+
+
+aside button img {
+    width: 28px;
+    height: 28px;
+}
+
+/* MAIN */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* SECTIONS */
+section {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+/* FORM */
+.form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input, select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* LIST */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #f1f2f6;
+    margin-bottom: 5px;
+    padding: 8px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background: #ac99af;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+}
+
+/* DARK MODE */
+body.dark {
+    background: #1e1e1e;
+    color: white;
+}
+
+body.dark header {
+    background: #333;
+}
+
+body.dark aside {
+    background: #111;
+}
+
+body.dark section {
+    background: #2a2a2a;
+    color: white;
+}
+
+body.dark input,
+body.dark select {
+    background: #444;
+    color: white;
+    border: 1px solid #666;
+}
+
+body.dark table th {
+    background: #444;
+}
+
+body.dark li {
+    background: #3a3a3a;
+}
+
+header {
+    position: relative;
+}
+
+/* dark mode mygtukas */
+.dark-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.dark-toggle img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s;
+}
+
+.dark-toggle img:hover {
+    transform: scale(1.2);
+}
+
+iframe {
+    width: 100%;
+    min-height: 315px;
+}
