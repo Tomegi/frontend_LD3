@@ -1,11 +1,10 @@
-/* BENDRAS STILIUS */
 body {
     margin: 0;
     font-family: Arial;
     background: #f5f6fa;
 }
 
-/* VIRŠUTINĖ ANTRAŠTĖ */
+/* HEADER */
 header {
     background: #c38bbb;
     color: white;
@@ -14,12 +13,11 @@ header {
     position: relative;
 }
 
-/* KONTEINERIS (sidebar + main) */
 .container {
     display: flex;
 }
 
-/* SIDEBAR MENIU */
+/* SIDEBAR */
 aside {
     width: 220px;
     background: #655263;
@@ -27,7 +25,6 @@ aside {
     min-height: 100vh;
 }
 
-/* SIDEBAR MYGTUKAI */
 aside button {
     width: 100%;
     margin-bottom: 10px;
@@ -43,13 +40,12 @@ aside button {
     font-size: 16px;
 }
 
-/* HOVER EFEKTAS */
 aside button:hover {
     background: #f80ba1;
     transform: translateX(5px);
 }
 
-/* IKONOS MENIU */
+/* ICON */
 aside button img {
     width: 28px;
     height: 28px;
@@ -61,7 +57,6 @@ main {
     padding: 20px;
 }
 
-/* SEKCIJOS BLOKAI */
 section {
     background: white;
     padding: 20px;
@@ -69,32 +64,27 @@ section {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* SLĖPIMAS */
 .hidden {
     display: none;
 }
 
-/* FORMOS */
 .form {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
 }
 
-/* INPUTAI IR SELECT */
 input, select {
     padding: 8px;
     border-radius: 6px;
     border: 1px solid #ccc;
 }
 
-/* SĄRAŠAI */
 ul {
     list-style: none;
     padding: 0;
 }
 
-/* LIST ITEM */
 li {
     background: #f1f2f6;
     margin-bottom: 5px;
@@ -104,26 +94,22 @@ li {
     justify-content: space-between;
 }
 
-/* LENTELĖS */
 table {
     width: 100%;
     border-collapse: collapse;
 }
 
-/* LENTELĖS CELĖS */
 th, td {
     border: 1px solid #ccc;
     padding: 8px;
     text-align: center;
 }
 
-/* LENTELĖS HEADER */
 th {
     background: #ac99af;
     color: white;
 }
 
-/* RESPONSIVE */
 @media (max-width: 600px) {
     .container {
         flex-direction: column;
@@ -138,7 +124,7 @@ th {
     }
 }
 
-/* TAMSUS REŽIMAS */
+/* DARK MODE */
 body.dark {
     background: #1e1e1e;
     color: white;
@@ -156,7 +142,6 @@ body.dark select {
 body.dark table th { background: #444; }
 body.dark li { background: #3a3a3a; }
 
-/* DARK TOGGLE MYGTUKAS */
 .dark-toggle {
     position: absolute;
     right: 15px;
