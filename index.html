@@ -1,152 +1,174 @@
 <!DOCTYPE html>
 <html lang="lt">
-
 <head>
     <meta charset="UTF-8">
+
+    <!-- Puslapio pavadinimas -->
     <title>Studijų planuoklis</title>
+
+    <!-- CSS failo prijungimas -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>Studijų planuoklis</h1>
+<!-- VIRŠUTINĖ ANTRAŠTĖ -->
+<header>
+    <h1>Studijų planuoklis</h1>
 
-        <button class="dark-toggle" onclick="toggleDarkMode()">
-            <img src="img/moon.png" alt="Dark mode">
+    <!-- Tamsaus režimo mygtukas -->
+    <button class="dark-toggle" onclick="toggleDarkMode()">
+        <img src="img/moon.png" alt="Dark mode">
+    </button>
+</header>
+
+<div class="container">
+
+    <!-- ŠONINIS MENIU -->
+    <aside>
+        <button onclick="showSection('profilis')">
+            <img src="img/profile.png"> Profilis
         </button>
-    </header>
 
-    <div class="container">
+        <button onclick="showSection('paskaitos')">
+            <img src="img/lecture.png"> Paskaitos
+        </button>
 
-        <aside>
-            <button onclick="showSection('profilis')">
-                <img src="img/profile.png"> Profilis
-            </button>
+        <button onclick="showSection('egzaminai')">
+            <img src="img/exam.png"> Egzaminai
+        </button>
 
-            <button onclick="showSection('paskaitos')">
-                <img src="img/lecture.png"> Paskaitos
-            </button>
+        <button onclick="showSection('uzduotys')">
+            <img src="img/tasks.png"> Užduotys
+        </button>
 
-            <button onclick="showSection('egzaminai')">
-                <img src="img/exam.png"> Egzaminai
-            </button>
+        <button onclick="showSection('tvarkarastis')">
+            <img src="img/calendar.png"> Tvarkaraštis
+        </button>
+    </aside>
 
-            <button onclick="showSection('uzduotys')">
-                <img src="img/tasks.png"> Užduotys
-            </button>
+    <!-- PAGRINDINIS TURINYS -->
+    <main>
 
-            <button onclick="showSection('tvarkarastis')">
-                <img src="img/calendar.png"> Tvarkaraštis
-            </button>
-        </aside>
+        <!-- PROFILIO SEKCIJA -->
+        <section id="profilis">
+            <h2>Profilis</h2>
+            <p>Vardas: Meda</p>
 
-        <main>
+            <!-- Teksto dydžio valdymas -->
+            <div>
+                <button onclick="changeFontSize(1)">Didinti tekstą</button>
+                <button onclick="changeFontSize(-1)">Mažinti tekstą</button>
+            </div>
 
-            <section id="profilis">
-                <h2>Profilis</h2>
-                <p>Vardas: Meda</p>
+            <h2>Studijų patarimai</h2>
 
-                <div>
-                    <button onclick="changeFontSize(1)">Didinti tekstą</button>
-                    <button onclick="changeFontSize(-1)">Mažinti tekstą</button>
-                </div>
+            <!-- VIDEO 1 -->
+            <iframe width="100%" height="315"
+                src="https://www.youtube.com/embed/Y-jbe-je5XM"
+                allowfullscreen>
+            </iframe>
 
-                <h2>Studijų patarimai</h2>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/Y-jbe-je5XM" allowfullscreen>
-                </iframe>
+            <!-- VIDEO 2 -->
+            <iframe width="100%" height="315"
+                src="https://www.youtube.com/embed/kD3-DKkiVeA?si=SGpZ4Pkj57ShqLh7"
+                title="YouTube video players"
+                allowfullscreen>
+            </iframe>
+        </section>
 
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/kD3-DKkiVeA?si=SGpZ4Pkj57ShqLh7" title="YouTube video players" allowfullscreen>
-                </iframe>
-            </section>
+        <!-- PASKAITOS -->
+        <section id="paskaitos" class="hidden">
+            <h2>Paskaitos</h2>
 
-            <section id="paskaitos" class="hidden">
-                <h2>Paskaitos</h2>
+            <div class="form">
+                <input type="text" id="lectureName" placeholder="Pavadinimas">
 
-                <div class="form">
-                    <input type="text" id="lectureName" placeholder="Pavadinimas">
+                <select id="lectureDay">
+                    <option>Pirmadienis</option>
+                    <option>Antradienis</option>
+                    <option>Trečiadienis</option>
+                    <option>Ketvirtadienis</option>
+                    <option>Penktadienis</option>
+                </select>
 
-                    <select id="lectureDay">
-                        <option>Pirmadienis</option>
-                        <option>Antradienis</option>
-                        <option>Trečiadienis</option>
-                        <option>Ketvirtadienis</option>
-                        <option>Penktadienis</option>
-                    </select>
+                <input type="time" id="lectureTime" step="60" lang="lt-LT">
 
-                    <input type="time" id="lectureTime" step="60" lang="lt-LT">
+                <button onclick="addLecture()">Pridėti</button>
+            </div>
 
-                    <button onclick="addLecture()">Pridėti</button>
-                </div>
+            <ul id="lectureList"></ul>
+        </section>
 
-                <ul id="lectureList"></ul>
-            </section>
+        <!-- EGZAMINAI -->
+        <section id="egzaminai" class="hidden">
+            <h2>Egzaminai</h2>
 
-            <section id="egzaminai" class="hidden">
-                <h2>Egzaminai</h2>
+            <div class="form">
+                <input type="text" id="examName" placeholder="Egzaminas">
+                <input type="date" id="examDate">
+                <button onclick="addExam()">Pridėti</button>
+            </div>
 
-                <div class="form">
-                    <input type="text" id="examName" placeholder="Egzaminas">
-                    <input type="date" id="examDate">
-                    <button onclick="addExam()">Pridėti</button>
-                </div>
+            <ul id="examList"></ul>
+        </section>
 
-                <ul id="examList"></ul>
-            </section>
+        <!-- UŽDUOTYS -->
+        <section id="uzduotys" class="hidden">
+            <h2>Užduotys</h2>
 
-            <section id="uzduotys" class="hidden">
-                <h2>Užduotys</h2>
+            <div class="form">
+                <input type="text" id="taskInput" placeholder="Užduotis">
+                <input type="date" id="taskDeadline">
+                <button onclick="addTask()">Pridėti</button>
+            </div>
 
-                <div class="form">
-                    <input type="text" id="taskInput" placeholder="Užduotis">
-                    <input type="date" id="taskDeadline">
-                    <button onclick="addTask()">Pridėti</button>
-                </div>
+            <ul id="taskList"></ul>
+        </section>
 
-                <ul id="taskList"></ul>
-            </section>
+        <!-- TVARKARAŠTIS -->
+        <section id="tvarkarastis" class="hidden">
+            <h2>Tvarkaraštis</h2>
 
-            <section id="tvarkarastis" class="hidden">
-                <h2>Tvarkaraštis</h2>
+            <div class="subnav">
+                <a href="#lectureTable">Paskaitos</a>
+                <a href="#taskTable">Užduotys</a>
+                <a href="#examTable">Egzaminai</a>
+            </div>
 
-                <div class="subnav">
-                    <a href="#lectureTable"> Paskaitos </a>
-                    <a href="#taskTable"> Užduotys </a>
-                    <a href="#examTable"> Egzaminai </a>
-                </div>
+            <h3>Paskaitos</h3>
+            <table id="lectureTable">
+                <tr>
+                    <th>Pavadinimas</th>
+                    <th>Diena ir laikas</th>
+                    <th></th>
+                </tr>
+            </table>
 
-                <h3>Paskaitos</h3>
-                <table id="lectureTable">
-                    <tr>
-                        <th>Pavadinimas</th>
-                        <th>Diena / Laikas</th>
-                        <th></th>
-                    </tr>
-                </table>
+            <h3>Užduotys</h3>
+            <table id="taskTable">
+                <tr>
+                    <th>Pavadinimas</th>
+                    <th>Terminas</th>
+                    <th></th>
+                </tr>
+            </table>
 
-                <h3>Užduotys</h3>
-                <table id="taskTable">
-                    <tr>
-                        <th>Pavadinimas</th>
-                        <th>Terminas</th>
-                        <th></th>
-                    </tr>
-                </table>
+            <h3>Egzaminai</h3>
+            <table id="examTable">
+                <tr>
+                    <th>Pavadinimas</th>
+                    <th>Data</th>
+                    <th></th>
+                </tr>
+            </table>
+        </section>
 
-                <h3>Egzaminai</h3>
-                <table id="examTable">
-                    <tr>
-                        <th>Pavadinimas</th>
-                        <th>Data</th>
-                        <th></th>
-                    </tr>
-                </table>
-            </section>
+    </main>
+</div>
 
-        </main>
-    </div>
+<!-- JS failas -->
+<script src="script.js"></script>
 
-    <script src="script.js"></script>
 </body>
-
 </html>
